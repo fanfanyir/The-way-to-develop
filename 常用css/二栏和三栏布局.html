@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /*border: 1px dashed #fff;*/
+        }
+        .sub{
+        background: red;
+        }
+        .extra{
+        background: yellow;
+        }
+        .main{
+        background: blue;
+        }
+        /*方法一*/
+        /*.sub{*/
+            /*width: 100px;*/
+            /*background: red;*/
+            /*float: left;*/
+        /*}*/
+        /*.extra{*/
+            /*width: 200px;*/
+            /*float: right;*/
+            /*background: yellow;*/
+        /*}*/
+        /*.main{*/
+            /*margin-left: 100px;*/
+            /*margin-right: 200px;*/
+            /*background: blue;*/
+        /*}*/
+
+        /*方法二*/
+        /*.sub, .extra {*/
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*width: 200px;*/
+        /*}*/
+        /*.sub {*/
+            /*left: 0;*/
+        /*}*/
+        /*.extra {*/
+            /*right: 0;*/
+        /*}*/
+        /*.main {*/
+            /*margin: 0 200px;*/
+        /*}*/
+
+        /*方法三  圣杯布局(float + 负margin)*/
+        .main {
+            float: left;
+            width: 100%;
+        }
+        .sub {
+            float: left;
+            width: 120px;
+            margin-left: -100%;
+            position: relative;
+            right: 120px;
+        }
+        .extra {
+            float: left;
+            width: 150px;
+            margin-left: -150px;
+            position: relative;
+            left: 150px;
+        }
+        #bd {
+            padding: 0 150px 0 120px;
+        }
+
+        /*方法四  双飞翼布局(float + 负margin )*/
+        /*.main-wrap {*/
+            /*float: left;*/
+            /*width: 100%;*/
+        /*}*/
+        /*.sub {*/
+            /*float: left;*/
+            /*width: 190px;*/
+            /*margin-left: -100%;*/
+        /*}*/
+        /*.extra {*/
+            /*float: left;*/
+            /*width: 230px;*/
+            /*margin-left: -230px;*/
+        /*}*/
+        /*.main {*/
+            /*margin: 0 230px 0 190px;*/
+        /*}*/
+
+        /*以下是五种布局的flex布局代码：*/
+        /*.layout {*/
+            /*display: flex;*/
+        /*}*/
+        /*.main {*/
+            /*flex: 1;*/
+        /*}*/
+        /*.aside {*/
+            /*background: darkorchid;*/
+            /*width: 200px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div id="content">
+    <!--方法一-->
+    <!--<div class="sub">sub</div>-->
+    <!--<div class="extra">extra</div>-->
+    <!--<div class="main">main</div>-->
+
+    <!--方法二-->
+    <!--<div class="sub">left</div>-->
+    <!--<div class="main">main</div>-->
+    <!--<div class="extra">right</div>-->
+
+    <!--方法三  圣杯布局(float + 负margin)-->
+    <div id="bd">
+        <div class="main">main</div>
+        <div class="sub">sub</div>
+        <div class="extra">extra</div>
+    </div>
+
+    <!--方法四  双飞翼布局(float + 负margin )-->
+    <!--<div class="main-wrap">-->
+        <!--<div class="main">#main</div>-->
+    <!--</div>-->
+    <!--<div class="sub">sub</div>-->
+    <!--<div class="extra">extra</div>-->
+
+    <!--以下是五种布局的flex布局代码：-->
+    <!--<div class="layout">-->
+        <!--<aside class="aside">侧边栏宽度固定</aside>-->
+        <!--<div class="main">主内容栏宽度自适应</div>-->
+    <!--</div>-->
+    <!--<div class="layout">-->
+        <!--<div class="main">主内容栏宽度自适应</div>-->
+        <!--<aside class="aside">侧边栏宽度固定</aside>-->
+    <!--</div>-->
+    <!--<div class="layout">-->
+        <!--<aside class="aside">左侧边栏宽度固定</aside>-->
+        <!--<div class="main">主内容栏宽度自适应</div>-->
+        <!--<aside class="aside">右侧边栏宽度固定</aside>-->
+    <!--</div>-->
+    <!--<div class="layout">-->
+        <!--<aside class="aside">第1个侧边栏宽度固定</aside>-->
+        <!--<aside class="aside">第2个侧边栏宽度固定</aside>-->
+        <!--<div class="main">主内容栏宽度自适应</div>-->
+    <!--</div>-->
+    <!--<div class="layout">-->
+        <!--<div class="main">主内容栏宽度自适应</div>-->
+        <!--<aside class="aside">第1个侧边栏宽度固定</aside>-->
+        <!--<aside class="aside">第2个侧边栏宽度固定</aside>-->
+    <!--</div>-->
+</div>
+</body>
+</html>
