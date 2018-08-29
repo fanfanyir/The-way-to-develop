@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # learnVue
 
 ## 介绍
@@ -78,3 +79,6 @@ Github: [https://github.com/answershuto](https://github.com/answershuto)
 掘金：[https://juejin.im/user/58f87ae844d9040069ca7507](https://juejin.im/user/58f87ae844d9040069ca7507)
 
 对内容有任何疑问，欢迎联系我。
+=======
+# learning
+>>>>>>> bec729900a435b2030f0890534fdc3480efd65ec
