@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    setTimeout(function(){
+        console.timeEnd("500~1000");
+    },1000);
+    setTimeout(function(){
+        console.timeEnd("0~500");
+        alert("等待1秒后再点确定");
+        console.time("500~1000");
+    },500);
+    alert("等待1秒后再点确定");
+    console.time("0~500");
+</script>
+</html>
