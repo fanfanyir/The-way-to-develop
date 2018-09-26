@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*三种：flex，table-cell，借助float+margin+padding*/
+        p{
+            padding: 15px;
+            float: left;
+            width: 200px;
+            margin-bottom: -9999px;
+            padding-bottom: 9999px;
+        }
+        div{
+            overflow: hidden;
+            /*display: flex;*/
+            /*display: table-row;*/
+        }
+        #p1{
+            /*display: table-cell;*/
+            /*word-break: break-all;!*换行*!*/
+            /*flex: 1;*/
+            background-color: #00ACC1;
+        }
+        #p2{
+            /*display: table-cell;*/
+            /*flex:1;*/
+            background-color: #795da3;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p id="p1">
+        要从创建一个Worker的程序中立即杀死它，可以在Worker对象（就像前一个代码段中的w1）
+        上调用terminate()。突然终结一个Worker线程不会给它任何机会结束它的工作，或清理任
+        何资源。这和你关闭浏览器的标签页来杀死一个页面相似。
+
+        如果你在浏览器中有两个或多个页面（或者打开同一个页面的多个标签页！），试着从同一个
+        文件URL中创建Worker，实际上最终结果是完全分离的Worker。待一会儿我们就会讨论“共享”
+        Worker的方法。
+    </p>
+    <p id="p2">
+        nihao
+    </p>
+</div>
+</body>
+</html>
