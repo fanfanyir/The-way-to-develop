@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = "1 5 6 7 4 4 4 6 6";
+    var line = a.split(" ");
+    var arr = [];
+    line = line.sort(function(a,b){return a>b});
+    console.log(line)
+
+    function getchild(line) {
+        line.forEach(function(item, index){
+            for(let i = index+1;i<line.length;i++){
+                if(item == line[i]){
+                    arr.push(line[i])
+                    delete line[i]
+                }
+            }
+        })
+        return arr
+    }
+    console.log(getchild(line))
+//    var subsets = function(nums) {
+//        const len = nums.length
+//        let arr = []
+//        let res = []
+//        dfs(0, arr)
+//        return res
+//        function dfs (num, vec) {
+//            let tmp = vec.slice(0)
+//            res.push(tmp)
+//            for (let i = num; i < len; i++) {
+//                vec.push(nums[i])
+//                dfs(i + 1, vec)
+//                vec.splice(-1)
+//            }
+//        }
+//    };
+//    var arr = new Array(3).fill(0);
+//console.log(subsets(arr))
+
+</script>
+</body>
+</html>
