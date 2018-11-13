@@ -1,0 +1,10 @@
+{
+  "presets": [
+    ["latest", {
+      "es2015": {
+        "modules":false  //不关心第三方引入的插件
+      }
+    }]
+  ],
+  "plugins": ["external-helpers"]
+}

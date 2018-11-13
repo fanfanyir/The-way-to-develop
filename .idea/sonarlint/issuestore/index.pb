@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 G
 react-demo/package.json,c/c/cc432f213a28a02192e7397d227048fd83c99262
 S
@@ -17,3 +18,7 @@ Z
 *react-demo/src/redux/reducers/msg/index.js,2/9/291c1429dffec7898829aaf3d0fed378097bccea
 T
 $react-demo/src/redux/actions/todo.js,b/9/b99b3459197d02e0f623e18a24e951886b5e0774
+=======
+E
+vue-src/core/index.js,4/a/4a1063e59087d78ec05256576f256e8ad8b4b819
+>>>>>>> c01647b69bba48e68d84de1a41dcdc9098b82917

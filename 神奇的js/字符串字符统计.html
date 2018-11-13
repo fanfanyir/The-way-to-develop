@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var str = 'hello world';
+
+    //方法一
+    function count(str) {
+        str = str.replace(/\s/,"");
+        let obj = {};
+        for(var i = 0;i<str.length;i++){
+        if(obj.hasOwnProperty(str[i])){
+            // if(obj[str[i]]){
+                obj[str[i]]++;
+            }else{
+                obj[str[i]] = 1;
+            }
+        }
+        return obj
+    }
+    //方法二
+    function count(str) {
+        var obj = {};
+        str.replace(/\S/g, function (n) {
+            obj[n]? obj[n]++: obj[n] = 1
+        })
+        return obj
+    }
+
+    // 方法三
+    function count(str) {
+        str = str.replace(/\s/,"");
+        for(var i=0, m=str.length, res={}; i<m; i++){
+            if(str.charAt(i) in res) res[str.charAt(i)]++;
+            else res[str.charAt(i)] = 1;
+        }
+        return res;
+    }
+    let newobj = count(str);
+    console.log(newobj)
+</script>
+</html>
