@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = ['https://pub-static.haozhaopian.net/static/web/site/features/cn/crop/images/crop_20a7dc7fbd29d679b456fa0f77bd9525d.jpg',
+        'https://pub-static.haozhaopian.net/static/web/site/features/cn/crop/images/crop_20a7dc7fbd29d679b456fa0f77bd9525d.jpg',
+        'https://pub-static.haozhaopian.net/static/web/site/features/cn/crop/images/crop_20a7dc7fbd29d679b456fa0f77bd9525d.jpg',
+        'https://pub-static.haozhaopian.net/static/web/site/features/cn/crop/images/crop_20a7dc7fbd29d679b456fa0f77bd9525d.jpg',
+        'https://pub-static.haozhaopian.net/static/web/site/features/cn/crop/images/crop_20a7dc7fbd29d679b456fa0f77bd9525d.jpg',
+        'https://pub-static.haozhaopian.net/static/web/site/features/cn/crop/images/crop_20a7dc7fbd29d679b456fa0f77bd9525d.jpg'];
+    let i;
+    function loadImage(arr){
+        let len = arr.length;
+        return new Promise(function(resolve, reject){
+            let Img = new Image();
+            Img.onload = function(){
+                resolve(Img);
+            }
+            Img.onerror = function(){
+                reject(new ErrorEvent("this is wrong"));
+            }
+            Img.src = arr[i];
+            console.log(i, '一张图片成功')
+            i++;
+        })
+    }
+    for (i = 0; i < arr.length;) {
+        loadImage(arr)
+        console.log("chengg")
+    }
+</script>
+</body>
+</html>
