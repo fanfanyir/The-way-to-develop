@@ -10,6 +10,33 @@
 // 数组最大的优点：快速查询。 arr[2]
 // 数组最好应用于“索引有语意”的情况
 
+function StringBuilder(value)
+{
+    this.strings = [""];
+    this.append(value);
+}
+
+// Appends the given value to the end of this instance.
+StringBuilder.prototype.append = function (value)
+{
+    if (value)
+    {
+        this.strings.push(value);
+    }
+}
+
+// Clears the string buffer
+StringBuilder.prototype.clear = function ()
+{
+    this.strings.length = 1;
+}
+
+// Converts this instance to a String.
+StringBuilder.prototype.toString = function ()
+{
+    return this.strings.join("");
+}
+
 class Array {
     constructor(data){
         this.data = [];
@@ -58,6 +85,10 @@ class Array {
 
         this.data[index] = e
         this.size ++
+    }
+
+    toString(){
+
     }
 
 }
