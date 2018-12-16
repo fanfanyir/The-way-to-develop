@@ -88,7 +88,8 @@ class Array {
     }
 
     toString(){
-
+        var res = new StringBuilder();
+        res.append( String.format("Array: size = %d,capacity = %d\n", size, data))
     }
 
 }
