@@ -5,20 +5,27 @@ class List extends Component {
     render(){
         const list = this.props.data
         return (
+            // const { content } = this.props;
+            // content 等价于 this.props.content
+            //
             <ul>
-                {
-                    list.map((item, index) => {
-                        return <li 
-                                    key={index} 
-                                    onClick={this.handleDelete.bind(this,)}
-                                    dangerouslySetInnerHTML={{__html: item}}
-                                >
-                                {/* {item} */}
-                                </li>
-                    })
-                }
+                {this.getTodoItem(list)}
             </ul>
         )
+    }
+
+    getTodoItem(list){
+        return list.map((item, index) => {
+            return <li 
+                        key={index} 
+                        onClick={this.handleDelete.bind(this,index)}
+                        dangerouslySetInnerHTML={{__html: item}}
+                     
+                    >
+                     {/* 不转义，直接以 ’h1’ 形式显示出来 */}
+                    {/* {item} */}
+                    </li>
+        })
     }
 
     handleDelete(index){

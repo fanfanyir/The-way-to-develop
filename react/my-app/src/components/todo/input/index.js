@@ -6,6 +6,8 @@ class Input extends Component {
         this.state = {
             title: ''
         }
+        this.changeHandle = this.changeHandle.bind(this)
+        this.clickHandle = this.clickHandle.bind(this)
     }
 
     // render(){
@@ -29,8 +31,8 @@ class Input extends Component {
                 id="insertArea"
                 className='input'
                 value={this.state.title} 
-                onChange={this.changeHandle.bind(this)}/>
-                <button onClick={this.clickHandle.bind(this)}>发送</button>
+                onChange={this.changeHandle}/>
+                <button onClick={this.clickHandle}>发送</button>
             </Fragment>
         )
     }
@@ -41,15 +43,21 @@ class Input extends Component {
         const addTitle = this.props.addTitle        // 函数
         addTitle(title)     // 将输入的内容放进数组里
 
-        this.setState({
+        this.setState(() => ({
             title: ''
-        })
+        }))
     }
 
+    // changeHandle(e){
+    //     this.setState({
+    //         title: e.target.value
+    //     })
+    // }
     changeHandle(e){
-        this.setState({
-            title: e.target.value
-        })
+        const value = e.target.value
+        this.setState(() => ({
+                title: value
+            }))
     }
 }
 
