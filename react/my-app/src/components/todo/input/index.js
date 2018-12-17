@@ -1,8 +1,11 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component, Fragment} from 'react';
+import PropTypes  from 'prop-types';
+import Test from '../test.js'
 
 class Input extends Component {
     constructor(props){
         super(props)
+        // 当组件的 state 或者 props 发生改变的时候， render 函数就会重新执行
         this.state = {
             title: ''
         }
@@ -28,11 +31,12 @@ class Input extends Component {
                 }
                 <label htmlFor="insertArea">输入内容：</label>
                 <input 
-                id="insertArea"
-                className='input'
-                value={this.state.title} 
-                onChange={this.changeHandle}/>
+                    id="insertArea"
+                    className='input'
+                    value={this.state.title} 
+                    onChange={this.changeHandle}/>
                 <button onClick={this.clickHandle}>发送</button>
+                <Test content={this.state.title}></Test>
             </Fragment>
         )
     }
@@ -59,6 +63,10 @@ class Input extends Component {
                 title: value
             }))
     }
+}
+
+Input.propTypes = {
+    addTitle: PropTypes.func.isRequired   //必填，如果没办法传也可以设置默认值---defalutProps
 }
 
 export default Input

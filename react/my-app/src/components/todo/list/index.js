@@ -1,4 +1,5 @@
-import React,{ Component } from 'react'
+import React,{ Component } from 'react';
+import PropTypes  from 'prop-types';
 
 class List extends Component {
 
@@ -19,11 +20,11 @@ class List extends Component {
             return <li 
                         key={index} 
                         onClick={this.handleDelete.bind(this,index)}
-                        dangerouslySetInnerHTML={{__html: item}}
+                        // dangerouslySetInnerHTML={{__html: item}}
                      
                     >
                      {/* 不转义，直接以 ’h1’ 形式显示出来 */}
-                    {/* {item} */}
+                    {this.props.test}-{item}
                     </li>
         })
     }
@@ -34,4 +35,14 @@ class List extends Component {
     }
 }
 
+
+List.propTypes = {
+    deleteTitle: PropTypes.func,
+    test: PropTypes.string.isRequired,
+    // list: PropTypes.arrayOf(PropTypes.number,PropTypes.string)      // 是 number 或者 string
+}
+
+List.defaultProps = {
+    test: 'hello world'
+}
 export default List

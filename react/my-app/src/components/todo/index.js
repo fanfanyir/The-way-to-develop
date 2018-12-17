@@ -14,6 +14,7 @@ class Todo extends Component {
     }
 
     render(){
+        // JSX -> createElement  ->  虚拟DOM(JS 对象) -> 真实的 DOM
         return (
             <div>
                 <Input addTitle={this.addTitle}/>
