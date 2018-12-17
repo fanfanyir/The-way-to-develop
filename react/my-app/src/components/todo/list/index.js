@@ -8,11 +8,22 @@ class List extends Component {
             <ul>
                 {
                     list.map((item, index) => {
-                        return <li key={index}>{item}</li>
+                        return <li 
+                                    key={index} 
+                                    onClick={this.handleDelete.bind(this,)}
+                                    dangerouslySetInnerHTML={{__html: item}}
+                                >
+                                {/* {item} */}
+                                </li>
                     })
                 }
             </ul>
         )
+    }
+
+    handleDelete(index){
+        const deleteTitle = this.props.deleteTitle
+        deleteTitle(index)
     }
 }
 
