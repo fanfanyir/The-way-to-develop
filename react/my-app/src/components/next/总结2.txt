@@ -43,5 +43,10 @@
         (7) 比较原始虚拟 DOM  和新的虚拟 DOM 的区别，找到区别是 span 中的内容（两个 js 对象的比对，极大的提升了性能）
         
         (8) 直接操作 DOM，改变 span 中的内容
+
+        优点：
+        (1) 性能提升了
+        (2) 它使得跨端应用得以实现。React Native  -----得益于虚拟 DOM 的存在
+        (3)
     5. <div>item</div>  =>  React.createElement('div', {}, 'item')
         // JSX -> createElement  ->  虚拟DOM(JS 对象) -> 真实的 DOM
