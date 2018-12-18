@@ -47,6 +47,30 @@
         优点：
         (1) 性能提升了
         (2) 它使得跨端应用得以实现。React Native  -----得益于虚拟 DOM 的存在
-        (3)
+
     5. <div>item</div>  =>  React.createElement('div', {}, 'item')
         // JSX -> createElement  ->  虚拟DOM(JS 对象) -> 真实的 DOM
+
+    6. (1) setState 底层性能优化，可以把多次 setState  合成一次 setState,减少虚拟 DOM 比对的次数。
+       (2) 虚拟 DOM 比对：
+               同层比对：一层不满足匹配要求时，下面的就不会再去比对了，直接废弃掉，用新的去替换老的
+               key 值比对：react 做列表循环时引入 key 值，为了提高虚拟 DOM 比对的性能，key 值要保持稳定，尽量不要用 index
+       (3) 
+       ref = {(input) => { this.input = input }}----------this.input -> e.target
+       ref  帮助我们直接获取 DOM 元素
+
+       DOM 获取并不及时，这是可以将获取的代码放进 setState 的第二个参数里
+       this.setState(() => ({}),() => {
+           console.log(length)
+       })
+
+    7. react 生命周期函数：在某一个时刻组件会自动调用执行的函数
+       (1) 初始化Initialization
+       (2) 挂载Mounting：组件第一次被放在页面上的时候：
+                componentWillMount -> render -> componentDidMount
+                componentWillMount  // 在组件即将被挂载到页面的时候执行
+       (3) 更新Updation：
+            props:    componentWillReceiveProps -> shouldComponentUpdate (true)-> componentWillUpdate -> render -> componentDidUpdate
+            states:   shouldComponentUpdate (true)-> componentWillUpdate -> render -> componentDidUpdate
+                  
+       (4) 注销Unmounting： componentWillUnmount
