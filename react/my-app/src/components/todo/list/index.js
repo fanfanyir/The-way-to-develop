@@ -14,12 +14,25 @@ class List extends Component {
             </ul>
         )
     }
-    
    
+    // 当这个组件即将被从页面中剔除的时候，会被执行
+    componentWillUnmount(){
+        // console.log("list componentWillUnmount")
+    }
+
+    shouldComponentUpdate(nextProps, nextState){
+        if(nextProps.data !== this.props.data){
+            return true
+        }else {
+            return false
+        }
+    }
+
     getTodoItem(list){
         return list.map((item, index) => {
             return <li 
-                        key={index} 
+                        key={item} 
+                        index={index}
                         onClick={this.handleDelete.bind(this,index)}
                         dangerouslySetInnerHTML={{__html: item}}
                      

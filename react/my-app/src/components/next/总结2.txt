@@ -65,12 +65,28 @@
        })
 
     7. react 生命周期函数：在某一个时刻组件会自动调用执行的函数
-       (1) 初始化Initialization
-       (2) 挂载Mounting：组件第一次被放在页面上的时候：
+       (1) 初始化Initialization: setup props and state
+       (2) 挂载Mounting：组件第一次被放在页面上的时候
                 componentWillMount -> render -> componentDidMount
-                componentWillMount  // 在组件即将被挂载到页面的时候执行
        (3) 更新Updation：
             props:    componentWillReceiveProps -> shouldComponentUpdate (true)-> componentWillUpdate -> render -> componentDidUpdate
             states:   shouldComponentUpdate (true)-> componentWillUpdate -> render -> componentDidUpdate
-                  
+            
+    // 一个组件要从父组件接受参数
+    // 只要父组件的 render 函数被重新执行了，子组件的这个生命周期函数就会被执行
+    // 如果这个组件第一次存在于父组件中，不会执行
+    // 如果这个组件之前已经存在于父组件中，才会执行
+    componentWillReceiveProps(){
+        console.log("input componentWillReceiveProps")
+    }
        (4) 注销Unmounting： componentWillUnmount
+
+    ------------------------------------------------------------------------------------------------
+    所有的生命周期函数都可以不写但是 render 函数必须写，因为我们的组件是继承自 component 组件的，react 的 component 组件内置了
+    除 render 函数外所有的生命周期函数实现
+
+    8. react 性能优化的点
+        (1) 在 constructor 里面写函数的 this 绑定，改变作用域：  保证整个程序里面函数作用域的绑定只会执行一次；避免子组件的无谓渲染
+        (2) setState 内置了性能提升的机制，是一个异步函数，可以把多次数据的改变结合成一次，降低虚拟 DOM 的比对频率
+        (3) 虚拟 DOM，同层比对，引入了 key 值：通过提升虚拟 DOM 的比对速度，提升 react 的性能
+        (4) 借助 shouldComponentUpdate ,避免无谓的组件 render 函数的运行从而提高 React 组件的性能

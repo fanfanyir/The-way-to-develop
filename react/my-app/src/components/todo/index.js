@@ -25,12 +25,12 @@ class Todo extends Component {
 
     //在组件即将被挂载到页面的时候自动执行
     componentWillMount(){
-        console.log("componentWillMount")
+        // console.log("componentWillMount")
     }
 
      //在组件被挂载到页面之后，自动执行
      componentDidMount(){
-        console.log("componentDidMount")
+        // console.log("componentDidMount")
     }
 
     addTitle(title){
@@ -48,9 +48,10 @@ class Todo extends Component {
         // immutable
         // state 不允许我们修改，如果非要改就拷贝一个副本出来改
         this.setState((prevState) => {
-            const list = [...prevState.list];
-            list.splice(index, 1);
-            return list;
+            const list = this.state.list
+            // const list = [...prevState.list]             用这个删不掉
+            list.splice(index, 1)
+            return list
         })
     }
 }
