@@ -5,6 +5,7 @@ class List extends Component {
     
     render(){
         const list = this.props.data
+        console.log(list)
         return (
             // const { content } = this.props;
             // content 等价于 this.props.content
@@ -15,24 +16,25 @@ class List extends Component {
         )
     }
    
-    // 当这个组件即将被从页面中剔除的时候，会被执行
-    componentWillUnmount(){
-        // console.log("list componentWillUnmount")
-    }
+    // // 当这个组件即将被从页面中剔除的时候，会被执行
+    // componentWillUnmount(){
+    //     // console.log("list componentWillUnmount")
+    // }
 
-    shouldComponentUpdate(nextProps, nextState){
-        if(nextProps.data !== this.props.data){
-            return true
-        }else {
-            return false
-        }
-    }
+    // shouldComponentUpdate(nextProps, nextState){
+    //     console.log(nextProps.data,this.props.data)
+    //     if(nextProps.data !== this.props.data){
+    //         return true
+    //     }else {
+    //         return false
+    //     }
+    // }
 
     getTodoItem(list){
         return list.map((item, index) => {
             return <li 
                         key={item} 
-                        index={index}
+                        // index={index}
                         onClick={this.handleDelete.bind(this,index)}
                         dangerouslySetInnerHTML={{__html: item}}
                      

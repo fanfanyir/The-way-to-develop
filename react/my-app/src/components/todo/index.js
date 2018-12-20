@@ -2,6 +2,7 @@ import React,{ Component } from 'react'
 import Input from './input/index.js'
 import List from './list/index.js'
 import './style.css'
+import axios from 'axios'
 
 class Todo extends Component {
     constructor(props){
@@ -25,12 +26,22 @@ class Todo extends Component {
 
     //在组件即将被挂载到页面的时候自动执行
     componentWillMount(){
-        // console.log("componentWillMount")
+        // 在这里写 ajax 请求会导致一些冲突
+        // console.log("componen、tWillMount")
     }
 
      //在组件被挂载到页面之后，自动执行
      componentDidMount(){
-        // console.log("componentDidMount")
+         axios.get('./api/todolist')
+         .then((res) => {
+             this.setState(() => {
+                 return {
+                     list: [...res.data]
+                 }
+             })
+            })
+         .catch(() => {alert('error')})
+        console.log("componentDidMount")
     }
 
     addTitle(title){
@@ -48,8 +59,9 @@ class Todo extends Component {
         // immutable
         // state 不允许我们修改，如果非要改就拷贝一个副本出来改
         this.setState((prevState) => {
-            const list = this.state.list
-            // const list = [...prevState.list]             用这个删不掉
+        // console.log(prevState.list,this.state.list,"delete")
+            // const list = this.state.list
+            const list = [...prevState.list]             //用这个删不掉
             list.splice(index, 1)
             return list
         })

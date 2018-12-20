@@ -90,3 +90,7 @@
         (2) setState 内置了性能提升的机制，是一个异步函数，可以把多次数据的改变结合成一次，降低虚拟 DOM 的比对频率
         (3) 虚拟 DOM，同层比对，引入了 key 值：通过提升虚拟 DOM 的比对速度，提升 react 的性能
         (4) 借助 shouldComponentUpdate ,避免无谓的组件 render 函数的运行从而提高 React 组件的性能
+    9. ajax 请求： componentDidMount   axios
+    10. 模拟一个接口，让 ajax 请求获取到这个接口的结果去改变页面上的内容:  借助 Charles
+    11. React 的 CSS 过渡动画, CSS 动画效果
+        借助 react-transition-group 实现复杂动画
