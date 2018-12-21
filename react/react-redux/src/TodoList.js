@@ -1,33 +1,31 @@
-import React, { Component } from 'react';
-import store from './store';
+import React from 'react';
 import { connect } from 'react-redux';
+import { getChangeAction, handleClick, deleteItem } from './store/actionCreator';
 
-class TodoList extends  Component {
-
-  constructor(props){
-    super(props);
-    this.state = store.getState();
-  }
-
-  render (){
+const TodoList = (props) => {
+  const { inputValue, handleClick, deleteItem, changeInputValue, list } = props;
     return (
       <div>
         <div>
-          <input value={this.props.inputValue} onChange={this.props.changeInputValue}/>
-          <button onClick={this.props.handleClick}>提交</button>
+          <input value={inputValue} onChange={changeInputValue}/>
+          <button onClick={handleClick}>提交</button>
         </div>
         <ul>
-          <li>dell</li>
+          {
+            list.map((item,index) => {
+              return <li key={index} onClick={() => {deleteItem(index)}}>{item}</li>
+            })
+          }
         </ul>
       </div>
     )
-  }
 }
 
 //  把 store 里面的 state 映射到这个组件的 props
 const mapStateToProps = (state) => {
   return {
-    inputValue: state.inputValue
+    inputValue: state.inputValue,
+    list: state.list
   }
 }
 
@@ -35,16 +33,15 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     changeInputValue(e){
-      const action = {
-        type: 'change_input_value',
-        value: e.target.value
-      }
+      const action = getChangeAction(e.target.value);
       dispatch(action)
     },
     handleClick(){
-      const action = {
-        type: 'add_item_list'
-      }
+      const action = handleClick();
+      dispatch(action)
+    },
+    deleteItem(index){
+      const action = deleteItem(index);
       dispatch(action)
     }
   }
