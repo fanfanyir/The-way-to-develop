@@ -23,3 +23,5 @@
 9. 在 public 文件夹里写的可以被启动的本地服务器访问到： 
         因为 create-react-app 底层也是一个 node 的服务器，当你去访问 “http://localhost:3000/api/headerList.json” 时，
         它会先去你的工程目录下去看有没有对应的路由，如果找不到，它会去 public 目录下找。
+10. 直接改变数组时会把 immutable 类型的数组变成普通数组，所以要在 Creator 里传递 action 之前把这个数组变成 immutable 的数组。
+11、immutable 类型的数组也有 map 方法
