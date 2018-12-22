@@ -19,3 +19,7 @@
           应用了 immutable 之后，这时我们的 state.header 是一个 immutable 对象，但是 state 却是一个 js 对象，这个时候我们就可以
           使用 redux-immutable 把我们的 state 也转换为 immutable 对象。
           focused: state.get('header').get('focused')  => focused: state.getIn(['header','focused'])
+8. redux-thunk   axios
+9. 在 public 文件夹里写的可以被启动的本地服务器访问到： 
+        因为 create-react-app 底层也是一个 node 的服务器，当你去访问 “http://localhost:3000/api/headerList.json” 时，
+        它会先去你的工程目录下去看有没有对应的路由，如果找不到，它会去 public 目录下找。
