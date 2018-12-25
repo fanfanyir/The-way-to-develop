@@ -12,10 +12,10 @@ class Topic extends Component {
         {
           this.props.list.map((item) => {
             return (
-              <TopicItem>
+              <TopicItem key={item.get('id')}>
                 <img 
                   className='topic-pic'
-                  key={item.get('id')}
+                  alt=''
                   src={item.get('imgUrl')}
                 />
                 {item.get('title')}
