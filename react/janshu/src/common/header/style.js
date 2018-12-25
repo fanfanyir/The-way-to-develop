@@ -50,7 +50,7 @@ export const NavItem = styled.div`
 export const SearchWrapper = styled.div`
     float: left;
     position: relative;
-    .iconfont {
+    .zoom{
         position: absolute;
         right: 5px;
         bottom: 5px;
@@ -85,6 +85,17 @@ export const SearchInfoTitle = styled.div`
 export const SearchInfoSwitch = styled.div`
     float: right;
     font-size: 13px;
+    cursor: pointer;
+    .spin{
+        display: block;
+        float: left;
+        font-size: 12px;
+        margin-right: 2px;
+
+        transition: all .2s ease-in;
+        /* transform: rotate(0deg);            旋转角度,尝试改变值实现动画旋转效果 */
+        transform-origin: center center;  /* 旋转中心*/
+    }
 `;
 
 export const SearchInfoItem = styled.a`
