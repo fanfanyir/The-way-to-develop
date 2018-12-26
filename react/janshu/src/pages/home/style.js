@@ -18,8 +18,9 @@ export const HomeLeft = styled.div`
 `;
 
 export const HomeRight = styled.div`
-  width: 240px;
+  width: 280px;
   float: right;  
+  padding-top: 30px;
 `;
 
 export const TopicWarpper = styled.div`
@@ -77,4 +78,112 @@ export const ListInfo = styled.div`
     font-size: 13px;
     color: #999;
   }
+`;
+
+export const RecommendWrapper = styled.div`
+	width: 280px;
+`;
+
+export const RecommendItem = styled.div`
+  margin-bottom:  20px;
+  border-radius: 4px;
+	width: 280px;
+	height: 50px;
+	background: url(${(props) => props.imgUrl});
+	/* background-size: contain; */
+`;
+
+export const WriterTopTitle = styled.div`
+    overflow: hidden;
+    width: 280px;
+    padding-top: 12px;
+    color: #969696;
+`;
+
+export const WriterSwitch = styled.div`
+    float: right;
+    font-size: 13px;
+    cursor: pointer;
+    .spin{
+        display: block;
+        float: left;
+        font-size: 12px;
+        transition: all .2s ease-in;
+        transform-origin: center center;  /* 旋转中心*/
+    }
+`;
+
+export const WriterWarpper = styled.ul`
+  overflow: hidden;
+  padding: 10px 0 10px 0;
+  width: 280px;
+`;
+
+export const WriterItem = styled.li`
+  width: 280px;
+  height: 47px;
+  margin-top: 15px;
+  font-size: 14px;
+  .portrait {
+    display: block;
+    float: left;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .name{
+    padding: 5px 0;
+    font-size: 14px;
+    display: block;
+    text-decoration: none;
+  }
+  .count{
+    display: block;
+    height: 22px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #969696;
+  }
+`;
+
+export const WriterFollow = styled.div`
+  float: right;
+  margin-top: -7px;
+  height: 25px;
+  color: #42c02e;
+  font-size: 14px;
+  .follow{
+    font-size: 13px;
+    padding-right:2px;
+  }
+`;
+
+export const LoadMore = styled.a`
+  box-sizing: border-box;
+  margin: 30px auto 60px auto;
+  display: block;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 20px;
+  background-color: #a5a5a5;
+  cursor: pointer;
+`;
+
+export const BackTop = styled.div`
+  position: fixed;
+  right: 100px;
+  bottom: 50px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background: #fff;
+  text-align: center;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  cursor: pointer;
 `;

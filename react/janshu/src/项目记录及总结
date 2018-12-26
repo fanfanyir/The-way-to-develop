@@ -27,4 +27,4 @@
 11、immutable 类型的数组也有 map 方法，没有 arr[i] 这样的写法
 12、 transition  transform  ref
 13、<Route path='/' exact component={Home}></Route>
-
+14、 immutable + pureComponent 管理数据，pureComponent 内部实现了 shouldComponentUpdate, 但是如果没有用 immutable 时最好自己手写 shouldComponentUpdate
