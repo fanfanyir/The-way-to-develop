@@ -11,7 +11,9 @@ class List extends PureComponent {
       <div>
         {
           list.map((item, index) => (
-            <Link key={index} to='/detail'>
+            // <Link key={index} to={'/detail?id=' + item.get('id')}>  拼参
+            // 动态路由
+            <Link key={index} to={'/detail/' + item.get('id')}>   
               <ListItem>
                   <img 
                     alt=''

@@ -28,3 +28,5 @@
 12、 transition  transform  ref
 13、<Route path='/' exact component={Home}></Route>
 14、 immutable + pureComponent 管理数据，pureComponent 内部实现了 shouldComponentUpdate, 但是如果没有用 immutable 时最好自己手写 shouldComponentUpdate
+15、动态路由获取参数 http://localhost:3000/detail/1
+16、connect(mapStateToProps, mapDispatchToProps)(withRouter(Detail));  withRouter // 让 Detail 组件可以获取到 Router 里的所有参数和内容
