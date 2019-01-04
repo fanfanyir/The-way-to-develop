@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container{
+            width: 500px;
+            height: 500px;
+            position:relative;
+            background-color: skyblue;
+        }
+
+        #center{
+            width:200px;
+            height:100px;
+            background-color: aqua;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        /*div {*/
+            /*height: 200px;*/
+        /*}*/
+        /*.right {*/
+            /*float: right;*/
+            /*width: 200px;*/
+            /*background-color: rebeccapurple;*/
+        /*}*/
+        /*.left {*/
+            /*margin-right: 200px;*/
+            /*background-color: red;*/
+        /*}*/
+    </style>
+</head>
+
+<body>
+<!--<div class="right"></div>-->
+<!--<div class="left"></div>-->
+<div id="container">
+    <div id="center">
+
+    </div>
+</div>
+<script>
+//    var a = 'aFaZhang';
+//    function fun(a){
+//        var reg = /[A-Z]+/g;
+//        return a.replace(reg, function(item){
+//          return "_"+item.toLocaleLowerCase()
+//        })
+//    }
+//    console.log(fun(a))
+
+//function Dog(){ }
+//Dog.prototype.bark = function(msg){
+//    console.log(msg);
+////    setTimeout(function(){
+////        this.bark(msg);
+////    },1000);
+//    setTimeout(()=>{this.bark(msg)},1000);
+//};
+//let d = new Dog();
+//d.bark("wang");
+
+
+//    var str = '12345678'
+//function re(str) {
+//
+//}
+//    console.log(re(str))
+//
+//strvar sRGB = 'rgb(255, 255, 255)';
+//function rgb2hex(sRGB) {
+////    var reg = /\d+/g;
+//    var reg = /rgb\((\d+),\s*(\d+),\s*(\d+)\)/;
+//    console.log(sRGB.match(reg))
+//}
+//rgb2hex(sRGB)
+
+function fast(node, callback) {
+    if(node!==null){
+        callback(node.value)
+        fast(node.left, callback)
+        fast(node.right, callback)
+    }
+}
+
+function callback(value){
+    console.log(value)
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<input style="font-size: 100px" ondblclick="abc()" type="button" value="双击"/>
+<script>
+//    function abc() {
+//        alert(123)
+//    }
+//    var oA = document.createElement('a');
+
+//当使用var创建一个变量时,创建的这个属性是不可配置的,也就是说这个变量无法通过delete运算符删除
+//    window.x = 2;
+//    var output = (function () {
+//        delete x;
+//        return x;
+//    })();
+//    console.log(output)
+
+//var oInput = document.getElementsByTagName('input')[0];
+//console.log(getComputedStyle(oInput).fontSize, 'qqqq',oInput.currentStyle,oInput.style)
+//function getStyle(obj,attr){
+//    return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj)[attr];}
+//    console.log(getStyle(oInput, 'fontSize'))
+//oInput.style.cssFloat = 'right';
+//var a = ''
+//console.log(Number(a), '空字符串')
+//console.log(Number([]), '[]')
+//console.log(Number(undefined), 'undefined')
+//console.log(Number(' '), '空ge')
+//console.log(Number(), '空')
+//console.log('10'>9)
+//
+//    console.log(a,1)
+//    var a = 100;
+//console.log(a,2)
+//function a() {
+//    console.log(1111)
+//}
+//console.log(a,3)
+//
+//    console.log(b,1)
+//    function b() {
+//        console.log(333)
+//    }
+//    console.log(b,2)
+//    var b = 200
+//    console.log(b,3)
+//
+//
+//var arr=[{'name':'abc','age':20}, {'name':'bcd',age:30}]
+//    console.log(arr[attr].length)
+
+
+    var i,a;
+    for(i = 0;i<10;i++){
+        //声明了10个函数
+        (function (i) {
+            a = document.createElement('a')
+            a.innerHTML = i+'<br>'
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                alert(i)
+            });
+            document.body.appendChild(a)
+        })(i)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<link type="text/css" rel="stylesheet" href="common.css"/>
+<style type="text/css">
+ul{margin:40px 100px;background-color:#5e6fdd;height:25px;overflow:hidden;position:relative;}
+li{height:25px;line-height:25px;font-size:14px;}
+li:nth-of-type(1){position:absolute;left:0px;top:0px;}
+li:nth-of-type(2){position:absolute;left:0px;top:25px;}
+</style>
+</head>
+<body>
+<ul>
+	<li>通知：下午三时发布重大新闻</li>
+	<li>通知：明天下午四时提交档案</li>
+</ul>
+
+<script src="jquery.min.js"></script>
+<script>
+
+
+function bobao(){
+   var i=0;
+   i<1?i:i=0;
+   $("li").eq(i).animate({"top":"-25px"},2000,"linear");
+   $("li").eq(i+1).animate({"top":"0px"},2000,"linear");
+    $("li").eq(i).animate({"top":"25px"},0,"linear");
+    i=i+1;
+    $("li").eq(i).animate({"top":"-25px"},2000,"linear");;
+    $("li").eq(i-1).animate({"top":"0px"},2000,"linear");
+    $("li").eq(i).animate({"top":"25px"},0,"linear");
+    bobao();
+ }
+   bobao();
+
+
+
+</script>
+	
+</body>
+</html>

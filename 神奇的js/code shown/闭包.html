@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function second(id) {
+        var _sed = []
+        if(_sed.indexOf(id) >= 0){
+            console.log(false)
+        }else{
+            _sed.push(id)
+            console.log(true)
+        }
+    }
+
+    function idFirst() {
+        var _list = []
+        return function (id) {
+            if(_list.indexOf(id) >= 0){
+                console.log(false)
+
+            }else{
+                _list.push(id)
+                console.log(true)
+            }
+        }
+    }
+    //在 idFirst 外面不可能修改 _list
+    var load = idFirst()
+    load(10)
+    load(10)
+    second(10)
+    second(10)
+</script>
+</body>
+</html>

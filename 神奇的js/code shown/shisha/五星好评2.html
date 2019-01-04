@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<link type="text/css" rel="stylesheet" href="common.csss"/>
+<style type="text/css">
+input:nth-of-type(1){width:200px;margin-left:10px;margin-top:20px;}
+ul{position:relative;}
+li,span{float:left;margin-left:10px;background-repeat:no-repeat;width:50px;height:50px;}
+li{background-image:url(3.png);}
+span{display:none;width:50px;height:50px;position:absolute;left:0;top:0px;}
+.box,span{background-image:url(4.png);}
+.box1{display:inline-block;}
+</style>
+</head>
+<body>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<span></span>
+</ul>
+<input type="text" placeholder="请输入点评星数"/>
+<input type="button" value="确认"/>
+
+
+<script src="myJs.js"></script>
+<script>
+$("input").eq(1).on("click",function(){
+  if($("input").eq(0).val()%1==0){
+  	 for(var i=0;i<$("input").eq(0).val();i++){
+  		$("li").eq(i).addClass("box")
+  }
+  	}else{
+  		for(var i=0;i<$("input").eq(0).val()-1;i++){
+  		$("li").eq(i).addClass("box")
+       }
+         $("span").css({"left":(i)*60+"px","width":$("input").eq(0).val()%1*$("span").outerWidth()+"px"}).addClass("box1");
+  	}
+})
+
+
+</script>
+	
+</body>
+</html>

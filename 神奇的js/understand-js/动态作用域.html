@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+
+//    var a =1;
+//    (function a() {
+//        a =2;
+//        console.log(a)
+//        delete a;
+//        console.log(a)
+//    })()
+
+
+//    var regex = /a/g;
+//    console.log(regex.test("a"),regex.test("aba"),regex.test("ababc"));
+
+
+//var a =1;
+//let b = 2;
+//console.log(window.a,window.b)
+
+
+//    var obj = {
+//        x:1,
+//        xyz: function () {
+//            with(this){
+//                function con() {
+//                    console.log(x);
+//                    console.log(this.x);
+//                }
+//                var x =  2;
+//                (function () {
+//                    con();
+//                })()
+//                con.call(this);
+//            }
+//        }
+//    }
+//    obj.xyz()
+
+
+//    const obj = {a:1,b:2};
+//    obj.a =2;
+//    var obj2 = Object.freeze({
+//        a:1,
+//        b:2
+//    });
+//    obj2.a = 2;
+//    console.log(obj,obj2)
+
+
+//    var name = "tom";
+//    var person = {
+//        name:'jerry',
+//        getName: function () {
+//            return this.name
+//        }
+//    };
+//    var getName = person.getName;
+//    var name1 = person.getName();
+//    var name2 = getName()
+//    console.log(name1,name2)
+//    const timeObj = {
+//        day:0,
+//        hour: 0,
+//        min: 0,
+//        sec: 0,
+//        ms: 0
+//    };
+//    function remainTime(mss, timeObj) {
+//        timeObj.day = parseInt(mss / (1000 * 60 * 60 * 24));
+//        timeObj.hour = parseInt((mss % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//        timeObj.min = parseInt((mss % (1000 * 60 * 60)) / (1000 * 60));
+//        timeObj.sec = (mss % (1000 * 60)) / 1000;
+//    }
+//    remainTime(2000,timeObj)
+//    console.log(timeObj)
+
+
+//var a = 'bbadvsaaswbbaaabb'
+//var str = [];
+//var count = 0;
+//var maxArr = [];
+//[...a].forEach(function (item) {
+//    if(str.indexOf(item) > -1) {
+//        maxArr.push(count)
+//        count = 1
+//    }else{
+//        str.push(item);
+//        count++;
+//    }
+//})
+//    console.log(maxArr)
+//    console.log(Math.max(...maxArr))
+//    var a = 23;
+//    function c2() {
+//        this.a = 34;
+//        return a;
+//    }
+//    console.log(c2())
+
+//    function f() {
+//        this.b = 100;
+//        return this.a
+//    }
+//    var g = f.bind({a: "test"});
+//    console.log(new g())
+//    console.log(g)
+
+//    function foo(x,y) {
+//        console.log(x,y,this);
+//    }
+//    console.log('foo.call(100,1,2)',foo.call(100,1,2));
+//    console.log('foo.apply(true,3,4)',foo.apply(true,[3,4]));
+//    console.log('foo.apply(null)',foo.apply(null));
+//    console.log('foo.apply(undefined)',foo.apply(undefined));
+
+//    var x = 9;
+//    var module = {
+//        x: 89,
+//        getx: function () {
+//            console.log(this,'getx')
+//            return this.x
+//        },
+//        gety : () => {
+//            console.log(this,'gety')
+//            return this.x
+//        }
+//    }
+//    var str = module.getx.bind(module)
+//    console.log(module.getx()) //89
+//    console.log(module.gety()) //9
+//    console.log(str(),'getx') //9
+</script>
+</html>
