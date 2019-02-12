@@ -29,3 +29,7 @@ hw.next()   // { value: 'undefined', done: true } 此时 Generator 函数已经�
 ES6 没有规定，function 关键字与函数名之间的星号写在哪个位置，所以前后是否有空格都不影响。  一般写法是： function* foo(x,y){...}
 
 三、yield 表达式
+由于 Generator 函数返回的遍历器对象，只有调用 next 方法才会遍历下一个内部状态，所以其实提供了一种可以暂时执行的函数。yield 表达式就是暂停标志。
+1.
+2.
+3.
