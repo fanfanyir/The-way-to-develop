@@ -11,8 +11,9 @@ function *foo(){
 function *bar() {
   b--;
   yield;
-  a = (yield 8)+b;
-  b= a*(yield 2);
+  a = (yield 8) + b;
+  b= a * (yield 2);
+  // b= (yield 2) * a;
 }
 
 function step(gen){
