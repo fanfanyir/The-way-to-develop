@@ -28,6 +28,9 @@ function step(gen){
 a = 1;
 b = 2;
 var s1 = step( foo );
+// s1:  ƒ (){
+//     last = it.next(last).value;
+//   }
 var s2 = step( bar );
 
 s2();
